@@ -1,0 +1,443 @@
+<div class="hide views_auditorias" id="opciones_auditoria">
+	<div class="section blue darken-3">
+		<div class="container center-align pb-5">
+			<h5 class="white-text" id="opciones_de_inicio_linea">Opciones de Inicio</h5>
+		</div>
+	</div>
+	<div class="section mt-n6">
+		<div class="container">
+			<div class="row">
+				<div class="col s10 m10 l6 offset-m1 offset-s1 offset-l3">
+					<div class="card">
+						<form id="form_login">
+							<div class="card-content">
+								<div class="row center-align">
+									<label style="font-size: 1.3rem;">Opciones de Inicio</label>
+								</div>
+								<div class="row">
+									<div class="col s10 offset-s1 ">
+										<div class="btn btn-primary waves-effect btn-large col s12 m12 l12 m-2 btn_opciones_inicio" id="opciones_inicio_iniciar"><b>INICIAR AUDITORIA</b></div>
+									</div>
+									<div class="col s10 offset-s1 ">
+										<div class="btn btn-primary waves-effect btn-large col s12 m12 l12 m-2 btn_opciones_inicio" disabled="disabled" id="opciones_inicio_cambiar_linea"><b>CAMBIAR LINEA</b></div>
+									</div>
+									<div class="col s10 offset-s1 ">
+										<div class="btn btn-primary waves-effect btn-large col s12 m12 l12 m-2 btn_opciones_inicio" id="opciones_inicio_pp"><b>MARCAR PP</b></div>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="pink accent-4 py-3 white-text center-align hide" id="view_alert_higiene"><b>Recuerda usar guantes desechables y tu pluma.</b></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="hide views_auditorias" id="insert_name_auditor">
+	<div class="section blue darken-3">
+		<div class="container center-align pb-5">
+			<h6 class="white-text">Nombre del jefe de línea</h6>
+		</div>
+	</div>
+	<div class="section mt-n6">
+		<div class="container">
+			<div class="row">
+				<div class="col s10 m10 l6 offset-m1 offset-s1 offset-l3">
+					<div class="card">
+						<form id="form_insert_name_personal_acargo">
+	
+							<div class="card-content">
+								<div class="row center-align">
+									<label style="font-size: 1.2rem;">Ingresa el nombre del jefe de línea o persona a cargo de la línea para continuar</label>
+								</div>
+								<div class="row">
+									<div class="col s10 offset-s1 ">
+										<input id="insert_name_personal_acargo" class="font-capitalize weight-6" required="required" autocomplete="off">
+									</div>
+									<div class="col s10 offset-s1 mt-3">
+										<button type="submit" class="btn btn-primary waves-effect  col s12 m12 l12 m-2"><b>GUARDAR</b></button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="hide views_auditorias" id="lista_pregunta_auditorias">
+	<div class="section blue darken-3 p-1">
+		<div class="container center-align p-0">
+			<h6 class="white-text" id="lista_pregunta_auditoria_label_linea">Preguntas LPA</h6>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 m12 l12 xl10 offset-xl1" id="lista_pregunta_auditoria_contenedor">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="hide views_auditorias" id="lista_preguntas_show_info">
+	<div class="section blue darken-3 p-1">
+		<div class="container center-align pb-4">
+			<h6 class="white-text" id="lista_pregunta_auditoria_label_linea">Info pregunta</h6>
+		</div>
+	</div>
+	<div class="section mt-n5">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 m12 l12 xl10 offset-xl1">
+					<div class="card p-0 col s12 m12 l12 my-1">
+						<div class="card-content p-0" id="lista_preguntas_info_pregunta">
+							<table class="table striped">
+								<tr>
+									<td class="w-10 blue-grey darken-1 white-text weight-7 p-2 center-align" id="info_pregunta_no_pregunta"></td>
+									<td class="px-4">
+										<b id="info_pregunta_titulo"></b><br>
+										<label class="weight-7" style="font-size: 1rem;" id="info_pregunta_pregunta"></label>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2"><b>Importancia:</b><br><label id="info_pregunta_importancia" style='font-size:1rem;'></label></b></td>
+								</tr>
+								<tr>
+									<td colspan="2"><b>Plan de reacción:</b><br><label id="info_pregunta_plan_de_reaccion" style='font-size:1rem;'></label></b></td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<div class="col s4 m4 l4 xl4 p-1">
+											<button class="btn green darken-3 btn-large col s12 m12 l12 xl12 weight-7" onclick='auditoria.set_ok();' id="btn-set-s">S</button>
+										</div>
+										<div class="col s4 m4 l4 xl4 p-1">
+											<button class="btn red darken-3 btn-large col s12 m12 l12 xl12 weight-7" onclick='auditoria.no_conformidad();' id="btn-set-n">N</button>
+										</div>
+										<div class="col s4 m4 l4 xl4 p-1">
+											<button class="btn grey darken-3 btn-large col s12 m12 l12 xl12 weight-7" onclick='auditoria.set_na();' id="btn-set-na">N/A</button>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="hide views_auditorias" id="lista_preguntas_show_no_conformidad">
+	<div class="section blue darken-3 p-1">
+		<div class="container center-align pb-4">
+			<h6 class="white-text" id="lista_pregunta_auditoria_label_linea">Nuevo Hallazgo</h6>
+		</div>
+	</div>
+	<div class="section mt-n5">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 m12 l12 xl10 offset-xl1">
+					<div class="card p-0 col s12 m12 l12 my-1">
+						<div class="card-content p-0" id="lista_preguntas_new_finding">
+							<table class="table striped" id="t_form_alta_finding">
+								<tr>
+									<td class="w-10 blue-grey darken-1 white-text weight-7 p-2 center-align" id="new_finding_no_pregunta"></td>
+									<td class="px-4">
+										<b id="new_finding_titulo"></b><br>
+										<label class="weight-7" style="font-size: 1rem;"
+											id="new_finding_pregunta"></label>
+									</td>
+								</tr>
+								<tr id="form_alta_finding" class="hide">
+									<td colspan="2" class="pt-0 px-0">
+										<form id="form_new_finding">
+											<div class=" row green darken-3 white-text weight-7 p-2 center-align col s12 m12 l12 xl12 insert_finding_accion_nc_lanbel hide" >En esta pregunta solo se puden generar hallazgo cerrados al momento.</div>
+											<div class="input-field col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 mt-6">
+												<textarea id="insert_finding_hallazgo" class="materialize-textarea weight-6" type="text" autocomplete="off" required="required" data-length="250"></textarea>
+												<label for="insert_finding_hallazgo">¿Cuál fue el hallazgo que se detectó?</label>
+											</div>
+											<div class="input-field col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 mt-4">
+												<textarea id="insert_finding_accion" class="materialize-textarea weight-6" type="text" autocomplete="off" required="required" data-length="250"></textarea>
+												<label for="insert_finding_accion">¿Acción propuesta por el responsable?</label>
+											</div>
+											<div class="row">
+												<div class="col s10 m4 l4 xl4 offset-s1 offset-m1 offset-l1 offset-xl1 mt-5">
+													<div class="col s12 m12 l12 xl12">
+														<div class="col s12 m12 l12 xl12 center-align waves-effect pt-2" style="min-height: 100px;" tomar-foto>
+															<i class="material-icons blue-grey-text text-lighten-4" style="font-size: 8rem;">
+																camera_alt
+															</i>
+															<!-- <i class="fas fa-camera blue-grey-text text-lighten-4 fa-5x"></i> -->
+														</div>
+														<div class="col col s12 m12 l12 xl12 pt-2 center-align pt-2 hide" style="min-height: 100px;" view-foto>
+															<!-- <img class="responsive-img m1" src=""> -->
+															<canvas id="canvas"></canvas>
+															<canvas id="full_canvas" class="hide"></canvas>
+															<div class="btn btn-small red darken-3 col s8 m8 l8 xl8 offset-s2 offset-m2 offset-l2 offset-xl2" onclick='auditoria.eliminar_imagen();'>Quitar</div>
+														</div>
+														
+														<input type="file" accept="image/*" class="hide captura_foto" id='capture_1' name='capture_1' key='1' capture>
+													</div>
+												</div>
+												<div class="col s10 offset-s1 m6 l6 xl6">
+													<div class="col s12 m12 l12 xl12 mt-5">
+														<select class='browser-default' id="insert_finding_departamento"></select>
+													</div>
+													<div class="col s12 m12 l12 xl12 mt-5 pt-4">
+														<label>
+															<input id="insert_finding_accion_nc" type="checkbox" class="filled-in insert_finding_accion_nc" />
+															<span>Fue cerrada al momento?</span>
+														</label>
+													</div>
+													
+												</div>
+											</div>
+											
+											
+										
+											<div class="col s5 m5 l5 xl5 offset-s1 offset-m1 offset-l1 offset-xl1 mt-5">
+												<div class="btn btn-lager deep-orange darken-1 col s12 m12 l12 xl12" onclick="iniComponent.back();auditoria.eliminar_imagen();">CANCELAR</div>
+											</div>
+											<div class="col s5 m5 l5 xl5 mt-5">
+												<button type="submit" class="btn btn-lager col s12 m12 l12 xl12">GUARDAR</button>
+											</div>
+										</form>
+									</td>
+								</tr>
+								<tr id="form_editar_finding" class="hide">
+									<td colspan="2" class="pt-0 px-0">
+										<form id="form_update_finding">
+											<div class=" row green darken-3 white-text weight-7 p-2 center-align col s12 m12 l12 xl12 insert_finding_accion_nc_lanbel hide" >En esta pregunta solo se puden generar hallazgo cerrados al momento.</div>
+											<div class="input-field col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 mt-6">
+												<textarea id="editar_finding_hallazgo" class="materialize-textarea" type="text" autocomplete="off"
+													required="required" data-length="250"></textarea>
+												<label for="editar_finding_hallazgo">¿Cuál fue el hallazgo que se detectó?</label>
+											</div>
+											<div class="input-field col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 mt-4">
+												<textarea id="editar_finding_accion" class="materialize-textarea" type="text" autocomplete="off"
+													required="required" data-length="250"></textarea>
+												<label for="editar_finding_accion">¿Acción propuesta por el responsable?</label>
+											</div>
+											<div class="row">
+												<div class="col s10 m4 l4 xl4 offset-s1 offset-m1 offset-l1 offset-xl1 mt-5">
+													<div class="col s12 m12 l12 xl12">
+														<div class="col s12 m12 l12 xl12 center-align waves-effect pt-2" style="min-height: 100px;"
+															editar-tomar-foto>
+															<i class="material-icons blue-grey-text text-lighten-4" style="font-size: 8rem;">
+																camera_alt
+															</i>
+								
+														</div>
+														<div class="col col s12 m12 l12 xl12  pt-2 center-align" style="min-height: 100px;"
+															editar-view-foto>
+															<canvas id="editar_canvas"></canvas>
+															<canvas id="editar_full_canvas" class="hide"></canvas>
+															<div class="btn btn-small red darken-3 col s8 m8 l8 xl8 offset-s2 offset-m2 offset-l2 offset-xl2"
+																onclick='auditoria.eliminar_imagen_editar();'>Quitar</div>
+														</div>
+								
+														<input type="file" accept="image/*" class="hide editar-captura_foto" id='capture_2' name='capture_2'
+															key='1' capture>
+													</div>
+												</div>
+												<div class="col s10 offset-s1 m6 l6 xl6">
+													<div class="col s12 m12 l12 xl12 mt-5">
+														<select class='browser-default' id="editar_finding_departamento"></select>
+													</div>
+													<div class="col s12 m12 l12 xl12 mt-5 pt-4">
+														<label>
+															<input id="editar_finding_accion_nc" type="checkbox" class="filled-in insert_finding_accion_nc" />
+															<span>Fue cerrada al momento?</span>
+														</label>
+													</div>
+								
+												</div>
+											</div>
+								
+								
+								
+											<div class="col s5 m5 l5 xl5 offset-s1 offset-m1 offset-l1 offset-xl1 mt-5">
+												<div class="btn btn-lager deep-orange darken-1 col s12 m12 l12 xl12"
+													onclick="iniComponent.back();">CANCELAR</div>
+											</div>
+											<div class="col s5 m5 l5 xl5 mt-5">
+												<button type="submit" class="btn btn-lager col s12 m12 l12 xl12">GUARDAR</button>
+											</div>
+										</form>
+									</td>
+								</tr>
+							</table>
+							
+							<table class="table striped hide" id="lista_de_hallazgos">
+								<thead>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th style="width: 150px;"><div class="btn btn-small blue darken-3 right mr-4" onclick='auditoria.show_view.lista_preguntas_show_alta_no_conformidad();'><i class="fas fa-plus"></i> Agregar </div></th>
+								</thead>
+								<tbody>
+
+								</tbody>
+								<tfoot>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th style="width: 150px;"><div class="btn btn-small green darken-3 right mr-4" onclick="auditoria.set_nok();">Finalizar</div></th>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="hide views_auditorias" id="lista_preguntas_hallazgos_encontrados">
+	<div class="section blue darken-3 p-1">
+		<div class="container center-align pb-4">
+			<h6 class="white-text" id="lista_pregunta_auditoria_label_linea">Hallazgos encontrados durante la auditoria</h6>
+		</div>
+	</div>
+	<div class="section mt-n5">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 m12 l12 xl10 offset-xl1">
+					<div class="card p-0 col s12 m12 l12 my-1">
+						<div class="card-content p-0">
+							<table>
+								<tr id="finalizar_hallazgos_inicio" >
+									<td colspan="2" class="w-10 blue  white-text weight-7 p-2 center-align">Para finalizar auditoría favor de revisar los hallazgos encontrados y dar click en Finalizar.</td>
+								</tr>
+								<tr id="info_preugnta_finalizar" class="hide">
+									<td class="w-10 red darken-3 white-text weight-7 p-2 center-align" id="editar_final_finding_no_pregunta"></td>
+									<td class="px-4">
+										<b id="editar_final_finding_titulo"></b><br>
+										<label class="weight-7" style="font-size: 1rem;" id="editar_final_finding_pregunta"></label>
+									</td>
+								</tr>
+								<tr id="form_editar_final_finding" class="hide">
+									<td colspan="2" class="pt-0 px-0">
+										<form id="form_editar_hallazgo_final">
+											<div class=" row green darken-3 white-text weight-7 p-2 center-align col s12 m12 l12 xl12 insert_finding_accion_nc_lanbel hide" >En esta pregunta solo se puden generar hallazgo cerrados al momento.</div>
+											<div class="input-field col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 mt-5">
+												<textarea id="editar_final_finding_hallazgo" class="materialize-textarea" type="text" autocomplete="off"
+													required="required" data-length="250"></textarea>
+												<label for="editar_final_finding_hallazgo">¿Cuál fue el hallazgo que se detectó?</label>
+											</div>
+											<div class="input-field col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1 mt-4">
+												<textarea id="editar_final_finding_accion" class="materialize-textarea" type="text" autocomplete="off"
+													required="required" data-length="250"></textarea>
+												<label for="editar_final_finding_accion">¿Acción propuesta por el responsable?</label>
+											</div>
+											<div class="row">
+												<div class="col s10 m4 l4 xl4 offset-s1 offset-m1 offset-l1 offset-xl1 mt-5">
+													<div class="col s12 m12 l12 xl12">
+														<div class="col s12 m12 l12 xl12 center-align waves-effect pt-2" style="min-height: 100px;"
+															editar-tomar-foto-final>
+															<i class="material-icons blue-grey-text text-lighten-4" style="font-size: 8rem;">
+																camera_alt
+															</i>
+								
+														</div>
+														<div class="col col s12 m12 l12 xl12  pt-2 center-align" style="min-height: 100px;"
+															editar-view-foto-final>
+															<canvas id="editar_final_canvas"></canvas>
+															<canvas id="editar_final_full_canvas" class="hide"></canvas>
+															<div class="btn btn-small red darken-3 col s8 m8 l8 xl8 offset-s2 offset-m2 offset-l2 offset-xl2"
+																onclick='auditoria.eliminar_imagen_editar_final();'>Quitar</div>
+														</div>
+								
+														<input type="file" accept="image/*" class="hide editar_captura_foto_final" id='capture_3' name='capture_3'
+															key='1' capture>
+													</div>
+												</div>
+												<div class="col s10 offset-s1 m6 l6 xl6">
+													<div class="col s12 m12 l12 xl12 mt-5">
+														<select  class='browser-default' id="editar_final_finding_departamento"></select>
+													</div>
+													<div class="col s12 m12 l12 xl12 mt-5 pt-4">
+														<label>
+															<input id="editar_final_finding_accion_nc" type="checkbox" class="filled-in insert_finding_accion_nc" />
+															<span>Fue cerrada al momento?</span>
+														</label>
+													</div>
+								
+												</div>
+											</div>
+								
+								
+								
+											<div class="col s5 m5 l5 xl5 offset-s1 offset-m1 offset-l1 offset-xl1 mt-5">
+												<div class="btn btn-lager deep-orange darken-1 col s12 m12 l12 xl12"
+													onclick="iniComponent.back();auditoria.eliminar_imagen();">CANCELAR</div>
+											</div>
+											<div class="col s5 m5 l5 xl5 mt-5">
+												<button type="submit" class="btn btn-lager col s12 m12 l12 xl12">GUARDAR</button>
+											</div>
+										</form>
+									</td>
+								</tr>
+							</table>
+							<table class="table striped" id="t_hallazgos_encontrados">
+							</table>
+							<table class="table striped">
+								<tr id="finalizar_hallazgos_inicio">
+									<td colspan="2" class="w-10">
+										<div class="btn btn-small green darken-3 right weight-6" finalizar-auditoria-final>Finalizar Auditoria</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!-- sección para modals -->
+<div id="modal_set_pp" class="modal w-30">
+	<div class="card-title blue darken-3 white-text p-0">
+		<h5 class='p-3 my-0'>MARCAR PARO PROGRAMADO</h5>
+	</div>
+	<div class="modal-content center-align">
+		<div style="font-size: 1.5rem;"><b>Deseas marcar la auditoria como paro programado?</b><br><label>Se marcaran todas las preguntas que no se hayan auditado.</label></div><br>
+
+		<div class='btn btn-small right m-2' id="btn-confirm">Aceptar</div>
+		<div class='btn btn-small blue-grey right m-2 modal-close'>Cancelar</div>
+	</div>
+</div>
+
+<div id="modal_confirm" class="modal w-30">
+	<div class="card-title blue darken-3 white-text p-0">
+		<h5 class='p-3 my-0'>Eliminar Hallazgo</h5>
+	</div>
+	<div class="modal-content center-align">
+		<div style="font-size: 2rem;"><b>Deseas eliminar este hallazgo?</b></div><br>
+
+		<div class='btn btn-small right m-2' id="btn-confirm">Aceptar</div>
+		<div class='btn btn-small blue-grey right m-2 modal-close'>Cancelar</div>
+	</div>
+</div>
+
+
+<div id="modal_finalizando" class="modal" style='width: 300px;'>
+	<div class="card-title blue darken-3 white-text center-align">
+		<h5 class="my-0 py-1">Finalizando</h5>
+	</div>
+	<div class="modal-content">
+		<div class="progress">
+			<div class="indeterminate"></div>
+		</div>
+		<label class="weigth-7 blue-grey-text text-darken-3" id="modal_finalizado_label"></label>
+	</div>
+</div>
+
+<!-- Finaliza sección para modals -->
+<script>auditoria.ini();</script>

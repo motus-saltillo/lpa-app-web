@@ -1,0 +1,64 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+	<!--Import Google Icon Font-->
+	<link rel="shortcut icon" href="assets/img/icon.ico">
+	<title>Motus Apps | LPA.</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="assets/css/materialize.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="assets/css/custom.css" media="screen,projection" />
+
+      <!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, user-scalable=0" />
+	  <meta charset="UTF-8">
+    </head>
+
+    <body>
+		<nav>
+			<div class="nav-wrapper blue darken-3">
+				<a class="brand-logo center" id="text_logo">LPA</a>
+				<ul id="nav-mobile" class="left">
+					<li class="waves-effect " onclick="iniComponent.back();"><a ><i class="large material-icons">arrow_back</i></a></li>
+				</ul>
+				<ul id="nav-mobile" class="right">
+					<li class="waves-effect hide" id="marcar_pp_all"><a><b>MARCAR PP</b></a></li>
+					
+				</ul>
+			</div>
+		</nav>
+		<div id="main_view"></div>
+		<div id="modal_msa" class="modal">
+			<div class="modal-content">
+				<table id="table_calendar_msa" class="table">
+					<thead>
+						<tr>
+							<th style="min-width: 150px;">Maquina</th>
+							<th style="min-width: 150px;">Área</th>
+							<th>Ene</th>
+							<th>Feb</th>
+							<th>Mar</th>
+							<th>Abr</th>
+							<th>May</th>
+							<th>Jun</th>
+							<th>Jul</th>
+							<th>Ago</th>
+							<th>Sep</th>
+							<th>Oct</th>
+							<th>Nov</th>
+							<th>Dec</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+      <!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/materialize.js"></script>
+	<script type="text/javascript" src="assets/js/moment.js"></script>
+	<script type="text/javascript" src="app/events/events.js?V1.3"></script>
+	<script type="text/javascript" src="app/ini.js?V1.5.5"></script>
+	
+    </body>
+  </html>

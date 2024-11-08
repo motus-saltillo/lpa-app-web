@@ -1,2 +1,2 @@
-# lpa-app-web
-Aplicación movil web LPA
+# lpa.ziracom.com.mx
+Aplicacion Web App PHP
