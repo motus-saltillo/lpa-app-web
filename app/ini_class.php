@@ -158,7 +158,7 @@ class test extends ini
 		if(isset($co)) return $co;
 	}
 	function activar_this_hallazgo($id_hallazgo){
-		$sql = "SELECT MAX(No_Accion)+1 AS No_Accion FROM LPA_V_Hallazgos_Test WHERE Publicado=1 ORDER BY ID_Hallazgo DESC";
+		$sql = "SELECT ISNULL(MAX(No_Accion)+1,1) AS No_Accion FROM LPA_V_Hallazgos_Test WHERE Publicado=1 AND YEAR(GETDATE()) = YEAR(Fecha_Hallazgos) ORDER BY ID_Hallazgo DESC";
 		$res = $this->conexion->query($sql);
 		while ($fila=$res->fetch(PDO::FETCH_ASSOC)) {
 			$sql = "UPDATE LPA_Hallazgos_Test SET No_Accion='".($fila['No_Accion'])."', Publicado=1 WHERE ID_Hallazgo=$id_hallazgo";
@@ -1151,14 +1151,13 @@ WHERE        (dbo.LPA_Reporte_Auditoria.Activo = 1) AND (dbo.LPA_Reporte_Auditor
 		}
 	}
 	function activar_this_hallazgo($id_hallazgo){
-		$sql = "UPDATE LPA_Hallazgos SET No_Accion=ISNULL((SELECT MAX(No_Accion)+1 FROM LPA_V_Hallazgos WHERE Publicado=1),1), Publicado=1 WHERE ID_Hallazgo=$id_hallazgo";
+		$sql = "UPDATE LPA_Hallazgos SET No_Accion=ISNULL((SELECT MAX(No_Accion)+1 FROM LPA_V_Hallazgos WHERE Publicado=1 AND YEAR(Fecha_Hallazgo) = YEAR(GETDATE())),1), Publicado=1 WHERE ID_Hallazgo=$id_hallazgo";
 		$res = $this->conexion->query($sql);
 		if($res->rowCount()>0){
 			return true;
 		}else{
 			return false;
 		}
-		
 	}
 	function finalizar_auditoria_calendario($id_auditoria){
 		$sql = "UPDATE LPA_Calendario SET Fecha_Final_Auditoria='".date("Y-m-d H:i:s")."' WHERE ID_Calendario=$id_auditoria";

@@ -1,3 +1,10 @@
 /assets/js/app_motus.json
 .env
 .envcopy
+vendor/graham-campbell/result-type/
+vendor/phpmailer/phpmailer/
+vendor/symfony/polyfill-php80/
+vendor/vlucas/phpdotenv/
+vendor/symfony/polyfill-mbstring/
+vendor/symfony/polyfill-ctype/
+vendor/phpoption/phpoption/

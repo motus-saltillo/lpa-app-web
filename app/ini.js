@@ -25,8 +25,7 @@
 			niveles_uruapan: function () {
 				let html = '<button class="btn blue darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="inicio.show_calendar(1,1);"><b>Nivel 1</b></button>' +
 					'<button class="btn blue darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="inicio.show_calendar(1,2);"><b>Nivel 2</b></button>' +
-					'<button class="btn blue darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="inicio.show_calendar(1,3);"><b>Nivel 3</b></button>' +
-					'<button class="btn blue darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="inicio.show_calendar(1,4);"><b>Nivel S</b></button>';
+					'<button class="btn blue darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="inicio.show_calendar(1,3);"><b>Nivel 3</b></button>';
 				$("#menu_inicio").html(html);
 				config.change_datos_inicio("menu", "niveles_uruapan");
 				iniComponent.back = inicio.show_menu.plantas;
@@ -34,14 +33,13 @@
 			niveles_celaya: function () {
 				let html = '<button class="btn blue darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="inicio.show_calendar(2,1);"><b>Nivel 1</b></button>' +
 					'<button class="btn blue darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="inicio.show_calendar(2,2);"><b>Nivel 2</b></button>' +
-					'<button class="btn blue darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="inicio.show_calendar(2,3);"><b>Nivel 3</b></button>' +
-					'<button class="btn blue darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="inicio.show_calendar(2,4);"><b>Nivel S</b></button>';
+					'<button class="btn blue darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="inicio.show_calendar(2,3);"><b>Nivel 3</b></button>';
 				$("#menu_inicio").html(html);
 				config.change_datos_inicio("menu", "niveles_celaya");
 				iniComponent.back = inicio.show_menu.plantas;
 			},
 			plantas_prueba: function () {
-				let html = '<button class="btn red darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="test.select_planta(1);"><b>SPARTANBURG</b></button>';
+				let html = '<button class="btn red darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="test.select_planta(1);"><b>SALTILLO</b></button>';
 				$("#menu_inicio").html(html);
 				config.change_datos_inicio("menu", "plantas_prueba");
 				iniComponent.back = inicio.show_menu.plantas;
@@ -49,8 +47,7 @@
 			niveles_prueba: function () {
 				let html = '<button class="btn red darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="test.show_calendar(1);"><b>Nivel 1</b></button>' +
 					'<button class="btn red darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="test.show_calendar(2);"><b>Nivel 2</b></button>' +
-					'<button class="btn red darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="test.show_calendar(3);"><b>Nivel 3</b></button>' +
-					'<button class="btn red darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="test.show_calendar(4);"><b>Nivel S</b></button>';
+					'<button class="btn red darken-3 waves-effect btn-large col s12 m10 offset-m1 my-2" onclick="test.show_calendar(3);"><b>Nivel 3</b></button>';
 				$("#menu_inicio").html(html);
 				config.change_datos_inicio("menu", "niveles_prueba");
 				iniComponent.back = inicio.show_menu.plantas_prueba;
